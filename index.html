@@ -12,7 +12,7 @@
       font-family: Arial, sans-serif; 
       margin: 0; 
       background: #f5f6fa;
-      text-align: center; /* center header text */
+      text-align: center;
     }
 
     header {
@@ -20,10 +20,10 @@
       color: white;
       padding: 40px;
       display: flex;
-      flex-direction: column; /* stack image + text */
-      align-items: center;    /* center horizontally */
-      justify-content: center;
-      gap: 20px;
+      flex-direction: row;       /* image left — text right */
+      align-items: center;       /* vertically align */
+      justify-content: center;   /* keep everything centered on page */
+      gap: 30px;
     }
 
     header img {
@@ -35,11 +35,16 @@
       border: 3px solid #ffffff22;
     }
 
+    /* make the text block centered nicely */
+    header div {
+      text-align: center;
+    }
+
     section {
       padding: 40px;
       max-width: 900px;
       margin: auto;
-      text-align: left; /* keep content left-aligned */
+      text-align: left;
     }
 
     h2 {
