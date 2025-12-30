@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <title>My Portfolio</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="fav.png">
 
   <style>
     body { 
       font-family: Arial, sans-serif; 
       margin: 0; 
       background: #f5f6fa;
+      text-align: center; /* center header text */
     }
 
     header {
@@ -16,10 +20,10 @@
       color: white;
       padding: 40px;
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      flex-direction: column; /* stack image + text */
+      align-items: center;    /* center horizontally */
+      justify-content: center;
       gap: 20px;
-      flex-wrap: wrap; /* allows responsiveness */
     }
 
     header img {
@@ -31,15 +35,11 @@
       border: 3px solid #ffffff22;
     }
 
-    header div {
-      flex: 1;
-      min-width: 200px; /* ensures text wraps nicely on small screens */
-    }
-
     section {
       padding: 40px;
       max-width: 900px;
       margin: auto;
+      text-align: left; /* keep content left-aligned */
     }
 
     h2 {
@@ -62,19 +62,6 @@
       padding: 20px;
       margin-top: 40px;
     }
-
-    /* Responsive tweaks */
-    @media (max-width: 600px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-      }
-
-      header div {
-        min-width: auto;
-      }
-    }
   </style>
 </head>
 
@@ -84,7 +71,6 @@
   <img src="profile.jpeg" alt="Mwaluda Brian">
   <div>
     <h1>Hi — I’m Mwaluda Brian</h1>
-    <p>Software Developer | Problem Solver | Lifelong Learner</p>
     <p>Turning problems into solutions, one line of code at a time.</p>
   </div>
 </header>
@@ -118,7 +104,8 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:you@example.com">alfredbrianmwaluda@gmail.com</a></p>
+  <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
+  <p>LinkedIn: <a href="#">your profile</a></p>
 </section>
 
 <footer>
