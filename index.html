@@ -15,7 +15,25 @@
       background: #1f2937;
       color: white;
       padding: 40px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 20px;
+      flex-wrap: wrap; /* allows responsiveness */
+    }
+
+    header img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      object-position: 50% 20%;
+      border-radius: 50%;
+      border: 3px solid #ffffff22;
+    }
+
+    header div {
+      flex: 1;
+      min-width: 200px; /* ensures text wraps nicely on small screens */
     }
 
     section {
@@ -44,23 +62,31 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+
+      header div {
+        min-width: auto;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <header>
-  <img src="profile.jpeg" alt="Mwaluda Brian" style="
-  width:140px;
-  height:140px;
-  object-fit:cover;
-  border-radius:50%;
-  border:3px solid #ffffff22;
-  margin-bottom:16px;
-">
-
-  <h1>Hi — I’m Mwaluda Brian</h1>
-  <p>Software Developer | Problem Solver | Lifelong Learner</p>
+  <img src="profile.jpeg" alt="Mwaluda Brian">
+  <div>
+    <h1>Hi — I’m Mwaluda Brian</h1>
+    <p>Software Developer | Problem Solver | Lifelong Learner</p>
+    <p>Turning problems into solutions, one line of code at a time.</p>
+  </div>
 </header>
 
 <section id="about">
@@ -92,8 +118,7 @@
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-  <p>LinkedIn: <a href="#">your profile</a></p>
+  <p>Email: <a href="mailto:you@example.com">alfredbrianmwaluda@gmail.com</a></p>
 </section>
 
 <footer>
@@ -102,4 +127,3 @@
 
 </body>
 </html>
-
