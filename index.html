@@ -20,10 +20,11 @@
       color: white;
       padding: 40px;
       display: flex;
-      flex-direction: row;       /* image left — text right */
-      align-items: center;       /* vertically align */
-      justify-content: center;   /* keep everything centered on page */
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;   /* push everything to the left */
       gap: 30px;
+      padding-left: 60px;            /* nice spacing from edge */
     }
 
     header img {
@@ -35,9 +36,8 @@
       border: 3px solid #ffffff22;
     }
 
-    /* make the text block centered nicely */
     header div {
-      text-align: center;
+      text-align: center;            /* keep words centered */
     }
 
     section {
