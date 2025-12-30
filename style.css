@@ -1,1 +1,152 @@
+/* RESET */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f0f11;
+  color: #eee;
+  display: flex;
+  min-height: 100vh;
+}
+
+.light {
+  background: #fafafa;
+  color: #111;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: #111317;
+  padding: 30px 20px;
+}
+
+.light .sidebar {
+  background: #e8e8e8;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.nav a {
+  display: block;
+  color: #cfcfcf;
+  padding: 12px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: #e63946;
+  color: white;
+}
+
+.toggle-btn {
+  margin-top: 30px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+}
+
+/* HERO SECTION */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 80px;
+}
+
+.profile-wrap {
+  position: relative;
+}
+
+.profile-wrap img {
+  width: 260px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.corner {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e63946;
+}
+
+.top-left {
+  top: -12px;
+  left: -12px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.bottom-right {
+  bottom: -12px;
+  right: -12px;
+  border-left: none;
+  border-top: none;
+}
+
+.intro {
+  max-width: 520px;
+}
+
+.intro span {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.actions {
+  margin-top: 18px;
+}
+
+.btn {
+  background: #e63946;
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 25px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid #e63946;
+  color: #e63946;
+}
+
+/* SKILLS + EDUCATION SECTION */
+.skills-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding: 40px 80px 80px;
+}
+
+.skills-left ul,
+.skills-right ul {
+  line-height: 1.8;
+  padding-left: 18px;
+}
+
+.edu-exp {
+  margin-top: 25px;
+}
+
+.timeline .item {
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
 
