@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>My Portfolio</title>
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="fav.png">
 
@@ -12,19 +12,15 @@
       font-family: Arial, sans-serif; 
       margin: 0; 
       background: #f5f6fa;
-      text-align: center;
     }
 
     header {
       background: #1f2937;
       color: white;
-      padding: 40px;
+      padding: 40px 60px;
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: flex-start;   /* push everything to the left */
-      gap: 30px;
-      padding-left: 60px;            /* nice spacing from edge */
+      gap: 25px;
     }
 
     header img {
@@ -36,8 +32,10 @@
       border: 3px solid #ffffff22;
     }
 
-    header div {
-      text-align: center;            /* keep words centered */
+    /* TEXT BLOCK — centered */
+    header .intro {
+      flex: 1;             /* take remaining space */
+      text-align: center;  /* center text */
     }
 
     section {
@@ -74,7 +72,8 @@
 
 <header>
   <img src="profile.jpeg" alt="Mwaluda Brian">
-  <div>
+
+  <div class="intro">
     <h1>Hi — I’m Mwaluda Brian</h1>
     <p>Turning problems into solutions, one line of code at a time.</p>
   </div>
