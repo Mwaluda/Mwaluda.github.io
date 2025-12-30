@@ -1,162 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>My Portfolio</title>
 
   <link rel="icon" type="image/png" href="fav.png">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f0f11;
-      color: #eee;
-      display: flex;
-      min-height: 100vh;
-    }
-
-    /* LEFT SIDEBAR */
-    .sidebar {
-      width: 220px;
-      background: #111317;
-      padding: 30px 20px;
-    }
-
-    .logo {
-      font-size: 26px;
-      font-weight: bold;
-      margin-bottom: 40px;
-      color: #fff;
-    }
-
-    .nav a {
-      display: block;
-      color: #cfcfcf;
-      padding: 12px 10px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-bottom: 6px;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      background: #e63946;
-      color: white;
-    }
-
-    /* MAIN CONTENT AREA */
-    .content {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 80px;
-    }
-
-    /* TEXT */
-    .intro {
-      max-width: 520px;
-    }
-
-    .intro h2 {
-      font-weight: normal;
-      color: #f6f6f6;
-      margin-bottom: 10px;
-    }
-
-    .intro h1 {
-      margin: 5px 0 15px;
-      font-size: 2.4rem;
-    }
-
-    .intro span {
-      color: #e63946;
-      font-weight: bold;
-    }
-
-    .intro p {
-      line-height: 1.6;
-      color: #bdbdbd;
-    }
-
-    .btn {
-      background: #e63946;
-      border: none;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 25px;
-      margin-top: 18px;
-      cursor: pointer;
-    }
-
-    .btn:hover {
-      opacity: 0.9;
-    }
-
-    /* PHOTO PANEL */
-    .profile-wrap {
-      position: relative;
-    }
-
-    .profile-wrap img {
-      width: 260px;
-      height: 340px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .corner {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      border: 4px solid #e63946;
-    }
-
-    .top-left { top: -12px; left: -12px; border-right: none; border-bottom: none; }
-    .bottom-right { bottom: -12px; right: -12px; border-left: none; border-top: none; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- SIDEBAR -->
-  <div class="sidebar">
+  <aside class="sidebar">
     <div class="logo">XXII</div>
 
-    <div class="nav">
+    <nav class="nav">
       <a class="active" href="#">Home</a>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Portfolio</a>
       <a href="#contact">Contact</a>
-    </div>
-  </div>
+    </nav>
 
-  <!-- MAIN SECTION -->
-  <div class="content">
+    <button id="themeToggle" class="toggle-btn">Toggle Theme</button>
+  </aside>
 
-    <div class="intro">
-      <h2>Hello, my name is <span> Mwaluda Brian</span></h2>
+  <!-- MAIN -->
+  <main>
 
-      <h1>I’m a <span>Problem solver</span></h1>
+    <!-- HERO -->
+    <section class="content">
+      <div class="profile-wrap">
+        <img src="profile.jpeg" alt="Profile">
+        <div class="corner top-left"></div>
+        <div class="corner bottom-right"></div>
+      </div>
 
-      <p>
-        I build practical tools and solve real problems using code.
-        My focus is simple: take messy ideas and turn them into clean,
-        working software that actually does something useful.
-      </p>
+      <div class="intro">
+        <h2>Hello, my name is <span>Mwaluda Brian</span></h2>
 
-      <button class="btn">More About Me</button>
-    </div>
+        <h1>I’m a <span>Problem Solver</span></h1>
 
-    <div class="profile-wrap">
-      <img src="profile.jpeg" alt="Profile">
+        <p>
+          I build practical tools and solve real problems using code.
+          My focus is simple: take messy ideas and turn them into clean,
+          working software that actually does something useful.
+        </p>
 
-      <div class="corner top-left"></div>
-      <div class="corner bottom-right"></div>
-    </div>
+        <div class="actions">
+          <a class="btn" href="#about">More About Me</a>
+          <a class="btn secondary" href="cv.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </section>
 
-  </div>
+    <!-- SKILLS + EDUCATION / EXPERIENCE -->
+    <section id="skills" class="skills-section">
+
+      <div class="skills-left">
+        <h3>Skills</h3>
+        <ul>
+          <li>Frontend Development</li>
+          <li>Backend APIs</li>
+          <li>Database Design</li>
+          <li>Problem-solving & Debugging</li>
+        </ul>
+      </div>
+
+      <div class="skills-right">
+        <h3>What I Work With</h3>
+        <ul>
+          <li>HTML / CSS / JavaScript</li>
+          <li>Python & Flask</li>
+          <li>MySQL / SQLite</li>
+          <li>Git & GitHub</li>
+        </ul>
+
+        <!-- EDUCATION + EXPERIENCE BELOW (like screenshot) -->
+        <div class="edu-exp">
+          <h3>Education & Experience</h3>
+
+          <div class="timeline">
+            <div class="item">
+              <strong>Computer Science</strong>
+              <span>Kabarak University</span>
+            </div>
+
+            <div class="item">
+              <strong>Industrial Attachment</strong>
+              <span>KEBS — Networking & Systems</span>
+            </div>
+
+            <div class="item">
+              <strong>Freelance Projects</strong>
+              <span>Real-world problem solving through code</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    // Dark / Light theme toggle
+    const toggleBtn = document.getElementById("themeToggle");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "light") {
+      body.classList.add("light");
+    }
+
+    toggleBtn.onclick = () => {
+      body.classList.toggle("light");
+      localStorage.setItem("theme",
+        body.classList.contains("light") ? "light" : "dark"
+      );
+    };
+  </script>
 
 </body>
 </html>
