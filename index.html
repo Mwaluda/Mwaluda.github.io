@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <link rel="icon" type="image/png" href="fav.png">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <style>
     * {
       margin: 0;
@@ -1165,8 +1167,8 @@
           <h4>SEND ME AN EMAIL</h4>
           <p class="contact-form-subtitle">I'M VERY RESPONSIVE TO MESSAGES</p>
           <form class="contact-form" id="contactForm">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
+            <input type="text" name="from_name" placeholder="Name" required>
+            <input type="email" name="from_email" placeholder="Email" required>
             <input type="text" name="subject" placeholder="Subject" required>
             <input type="tel" name="phone" placeholder="Phone" required>
             <textarea name="message" placeholder="Message" required></textarea>
@@ -1181,7 +1183,17 @@
   </main>
 
   <script>
+    // ========================================
+    // EMAILJS CONFIGURATION
+    // ========================================
+    // Initialize EmailJS with your Public Key
+    (function() {
+      emailjs.init("szRI9NE39riHh2l8G");
+    })();
+
+    // ========================================
     // IMAGE SLIDER - Multiple sliders support
+    // ========================================
     const sliders = {
       kebs: { index: 0, interval: null },
       gilanis: { index: 0, interval: null }
@@ -1282,65 +1294,50 @@
       localStorage.setItem("theme", body.classList.contains("light") ? "light" : "dark");
     };
 
-    // Contact Form Handling
+    // ========================================
+    // CONTACT FORM WITH EMAILJS
+    // ========================================
     const contactForm = document.getElementById('contactForm');
     const successMessage = document.getElementById('successMessage');
 
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Get form data
-      const formData = new FormData(contactForm);
-      const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        phone: formData.get('phone'),
-        message: formData.get('message')
-      };
+      // Disable the submit button to prevent double submissions
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton.textContent;
+      submitButton.textContent = 'Sending...';
+      submitButton.disabled = true;
 
-      // Here you would normally send the data to your backend/email service
-      // For now, we'll just show the success message
-      console.log('Form submitted with data:', data);
-      
-      // Show success message
-      successMessage.classList.add('show');
-      
-      // Reset form
-      contactForm.reset();
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => {
-        successMessage.classList.remove('show');
-      }, 5000);
-
-      // OPTIONAL: To actually send emails, you would need to:
-      // 1. Set up a backend service (Flask/Node.js/PHP)
-      // 2. Use an email service like SendGrid, Mailgun, or EmailJS
-      // 3. Send the form data to your backend endpoint
-      
-      // Example with fetch to a backend:
-      /*
-      fetch('your-backend-url/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(data => {
-        successMessage.classList.add('show');
-        contactForm.reset();
-        setTimeout(() => {
-          successMessage.classList.remove('show');
-        }, 5000);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('There was an error sending your message. Please try again.');
-      });
-      */
+      // Send email using EmailJS
+      emailjs.sendForm('service_ue0l6kr', 'template_9b52kyd', this)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          
+          // Show success message
+          successMessage.classList.add('show');
+          
+          // Reset form
+          contactForm.reset();
+          
+          // Re-enable button
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+          
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            successMessage.classList.remove('show');
+          }, 5000);
+        }, function(error) {
+          console.log('FAILED...', error);
+          
+          // Show error message
+          alert('Failed to send message. Please try again or email me directly at alfredbrianmwaluda@gmail.com');
+          
+          // Re-enable button
+          submitButton.textContent = originalButtonText;
+          submitButton.disabled = false;
+        });
     });
   </script>
 </body>
