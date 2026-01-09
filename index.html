@@ -928,7 +928,7 @@
           </p>
           <div class="actions">
             <a class="btn nav-link" data-section="about">More About Me</a>
-           <!-- <a class="btn secondary" href="cv.pdf" download>Download CV</a>-->
+            <a class="btn secondary" href="cv.pdf" download>Download CV</a>
           </div>
         </div>
       </div>
@@ -1135,6 +1135,39 @@
               </div>
             </div>
           </div>
+
+          <!-- JOB SCRAPER PROJECT WITH SLIDER -->
+          <div class="project-card">
+            <div class="slider-container">
+              <div class="slider" id="jobscraperSlider">
+                <img src="jobscraper1.jpg" alt="Job Scraper Dashboard" />
+                <img src="jobscraper2.jpg" alt="Search Results Interface" />
+                <img src="jobscraper3.jpg" alt="Job Details View" />
+              </div>
+              <button class="slider-arrow prev" onclick="changeSlide('jobscraper', -1)">‹</button>
+              <button class="slider-arrow next" onclick="changeSlide('jobscraper', 1)">›</button>
+              <div class="slider-nav">
+                <span class="slider-dot active" onclick="currentSlide('jobscraper', 0)"></span>
+                <span class="slider-dot" onclick="currentSlide('jobscraper', 1)"></span>
+                <span class="slider-dot" onclick="currentSlide('jobscraper', 2)"></span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-title">Job Scraper Application</div>
+              <div class="project-description">
+                An automated job scraping tool that aggregates job postings from multiple platforms including LinkedIn, 
+                Indeed, and Glassdoor. The application filters jobs based on keywords, location, and experience level, 
+                then sends daily email notifications with relevant opportunities. Built to streamline the job search 
+                process and save hours of manual browsing across different job boards.
+              </div>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Web Scraping</span>
+                <span class="tag">BeautifulSoup</span>
+                <span class="tag">Selenium</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1227,7 +1260,7 @@
       showSlide(sliderName, index);
     }
 
-    // Auto-slide for both sliders every 5 seconds
+    // Auto-slide for all sliders every 5 seconds
     function startAutoSlide() {
       sliders.kebs.interval = setInterval(() => {
         changeSlide('kebs', 1);
@@ -1235,6 +1268,10 @@
 
       sliders.gilanis.interval = setInterval(() => {
         changeSlide('gilanis', 1);
+      }, 5000);
+
+      sliders.jobscraper.interval = setInterval(() => {
+        changeSlide('jobscraper', 1);
       }, 5000);
     }
 
